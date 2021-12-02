@@ -39,12 +39,36 @@
 
 //----------------------------------------------------------------
 
-const comidasFavoritas = ["brigadeiro", "Lasanha", "strogonoff", "sorvete", "bolinha de queijo"]
+// const comidasFavoritas = ["brigadeiro", "Lasanha", "strogonoff", "sorvete", "bolinha de queijo"]
 
-console.log(comidasFavoritas)
-console.log("Essas sao minhas comidas favoritas: ", comidasFavoritas)
+// console.log(comidasFavoritas)
+// console.log("Essas sao minhas comidas favoritas: ")
+// console.log(comidasFavoritas[0])
+// console.log(comidasFavoritas[1])
+// console.log(comidasFavoritas[2])
+// console.log(comidasFavoritas[3])
+// console.log(comidasFavoritas[4])
 
-const comidaFavoritaUsuario = prompt("Insira sua comida favorita")
-console.log(comidasFavoritas.replaceAll(comidasFavoritas[1], comidaFavoritaUsuario))
+// const comidaUsuario = prompt("Informe sua comida favorita: ")
+// console.log(comidasFavoritas)
+// const novoArray = (comidasFavoritas.splice(1, 1, comidaUsuario))
+
+// console.log(comidasFavoritas)
+//----------------------------------------------------------------
+
+// const listaDeTarefas = []
+// const tarefasRealizar1 = prompt("Informe uma tarefa: ")
+// console.log(listaDeTarefas.push(tarefasRealizar1))
+// //console.log(listaDeTarefas)
+// const tarefasRealizar2 = prompt("Informe uma tarefa: ")
+// console.log(listaDeTarefas.push(tarefasRealizar2))
+// //console.log(listaDeTarefas)
+// const tarefasRealizar3 = prompt("Informe uma tarefa: ")
+// console.log(listaDeTarefas.push(tarefasRealizar3))
+// console.log(listaDeTarefas)
+
+// const tarefaRealizada = prompt("Informe o numero da tarefa que vc já fez: ")
+// console.log(listaDeTarefas.splice(tarefaRealizada - 1, 1))
+// console.log(listaDeTarefas)
 
 //----------------------------------------------------------------
