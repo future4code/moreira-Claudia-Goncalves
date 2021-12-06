@@ -18,87 +18,115 @@ function imprimeMensagem() {
 
 // EXERCÍCIO 01
 function calculaAreaRetangulo() {
-  // implemente sua lógica aqui
-
+  const altura = Number(prompt('Informe um valor para altura'))
+  const largura = Number(prompt('Informe um valor para largura'))
+  const calculaAreaRetangulo = altura * largura
+  console.log(calculaAreaRetangulo)
 }
 
 // EXERCÍCIO 02
 function imprimeIdade() {
-  // implemente sua lógica aqui
-
+  const anoAtual = Number(prompt('Informe o ano atual'))
+  const anoNascimento = Number(prompt('Informe o seu ano de nascimento'))
+  const idade = anoAtual - anoNascimento
+  console.log(idade)
 }
 
 // EXERCÍCIO 03
 function calculaIMC(peso, altura) {
-  // implemente sua lógica aqui
-
+  const imc = peso / (altura * altura)
+  return imc
 }
 
 // EXERCÍCIO 04
 function imprimeInformacoesUsuario() {
   // implemente sua lógica aqui
   // "Meu nome é NOME, tenho IDADE anos, e o meu email é EMAIL."
-
+  const nomeUsuario = prompt('Informe seu nome')
+  const idadeUsuario = Number(prompt('Informe sua idade'))
+  const emailUser = prompt('Informe seu email')
+  console.log(`Meu nome é ${nomeUsuario}, tenho ${idadeUsuario} anos, e o meu email é ${emailUser}.`)
 }
 
 // EXERCÍCIO 05
 function imprimeTresCoresFavoritas() {
-  // implemente sua lógica aqui
+  const cor1 = prompt('Infome cor 1')
+  const cor2 = prompt('Infome cor 2')
+  const cor3 = prompt('Infome cor 3')
+  const cores = [cor1, cor2, cor3]
+  console.log(cores)
 
 }
 
 // EXERCÍCIO 06
 function retornaStringEmMaiuscula(string) {
-  // implemente sua lógica aqui
-
+  const letraMaiuscula = string.toUpperCase();
+  return letraMaiuscula;
 }
 
 // EXERCÍCIO 07
 function calculaIngressosEspetaculo(custo, valorIngresso) {
-  // implemente sua lógica aqui
-
+  const semPrejuizo = custo / valorIngresso
+  return semPrejuizo
 }
 
 // EXERCÍCIO 08
 function checaStringsMesmoTamanho(string1, string2) {
-  // implemente sua lógica aqui
-
+  const checaTamanho = string1.length === string2.length
+  return checaTamanho
 }
 
 // EXERCÍCIO 09
 function retornaPrimeiroElemento(array) {
-  // implemente sua lógica aqui
-
+  const primeiroElementoArray = array[0]
+  return primeiroElementoArray
 }
 
 // EXERCÍCIO 10
 function retornaUltimoElemento(array) {
-  // implemente sua lógica aqui
-
+  const ultimoElementoArray = array
+  const ultimoElemento = ultimoElementoArray[ultimoElementoArray.length - 1]
+  return ultimoElemento
 }
 
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
-  // implemente sua lógica aqui
+  let array = array.push(array[0])
+  array = array.splice(0, 1)
+  arrayo = array.unshift(array[array.length - 2])
+  array = array.splice(array.length - 2, 1)
+  return array
 
 }
 
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
-  // implemente sua lógica aqui
+  const saoIguais = string1.toLowerCase()
+    === string2.toLowerCase()
+
+  return saoIguais
 
 }
 
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
-  // implemente sua lógica aqui
+  const anoAtual = Number(prompt('Informe o ano atual:'))
+  const anoNascimento = Number(prompt('Informe seu ano de nascimento'))
+  const anoEmissaoRg = Number(prompt('Informe o ano de emissao do seu RG'))
+  const idade = anoAtual - anoNascimento
+  const tempoEmissaoRg = anoAtual - anoEmissaoRg
+  const pessoas20anos = idade <= 20 && tempoEmissaoRg >= 5
+  const pessoas20e50anos = (idade >= 21 && idade <= 50) && tempoEmissaoRg >= 10
+  const pessoas50ouMais = (idade >= 51) && tempoEmissaoRg >= 15
+
+  console.log(pessoas20anos)
 
 }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
-  // implemente sua lógica aqui
-
+  const bissexto = (ano % 4 === 0) && (ano % 100 !== 0) || (ano % 400 === 0)
+  return bissexto
 }
 
 // EXERCÍCIO 15
