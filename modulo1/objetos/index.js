@@ -66,16 +66,70 @@ function dadosPessoa(pessoa) {
 
 dadosPessoa(pessoa)
 
+const novosApelidos = {
+  ...pessoa,
+  apelido: ["Tatau", "Pampulha", "Coração"]
+}
+
+dadosPessoa(novosApelidos)
 // ------------------------------------------------
 
+const dadosUm = {
+  nome: "Claudia",
+  idade: 31,
+  profissao: "Dev"
+}
+
+const dadosDois = {
+  nome: "Adriano",
+  idade: 33,
+  profissao: "Montador"
+}
+
+
+function novosDados(objeto) {
+  console.log(`${objeto.nome}, ${objeto.nome.length}, ${objeto.idade}, ${objeto.profissao}, ${objeto.profissao.length}`)
+}
+
+novosDados(dadosUm)
+novosDados(dadosDois)
+// ------------------------------------------------
+
+const carrinho = []
+
+const fruta1 = {
+  nome: "Banana",
+  disponibilidade: true,
+}
+
+const fruta2 = {
+  nome: "Uva",
+  disponibilidade: true,
+}
+
+const fruta3 = {
+  nome: "Limão",
+  disponibilidade: true,
+}
+
+function sacolao(fruta) {
+  return carrinho.push(fruta)
+}
+
+sacolao(fruta1)
+sacolao(fruta2)
+sacolao(fruta3)
+console.log(carrinho)
 
 
 // ------------------------------------------------
 
+function dadosUser() {
+  const nomeUser = prompt("Informe seu nome:")
+  const idadeUser = Number(prompt("Informe sua idade:"))
+  const profissaoUser = prompt("Informe sua profissão:")
 
-
-// ------------------------------------------------
-
+}
 
 
 // ------------------------------------------------
