@@ -105,7 +105,99 @@
 //----------------------------------------------------------------
 const nomeCompleto = prompt("Informe seu nome completo")
 const tipoJogo = prompt("Informe o tipo de jogo: [IN] Internacional / [DO] doméstico")
-const etapaJogo = prompt("Informe a etapa do jogo: [SF}")
-//----------------------------------------------------------------
+const etapaJogo = prompt("Informe a etapa do jogo: [SF] / [DT] / [FI]")
+const categoria = prompt("Informe a categoria: [1] / [2] / [3] / [4]")
+const quantidadeIngresso = prompt("Informe a quantidade de ingressos:")
 
-//----------------------------------------------------------------
+function templateTotalDomestico() {
+
+  let valorIngressoDomestico
+
+  if ((tipoJogo === "DO") && (etapaJogo === "SF") && (categoria === "1")) {
+    valorIngressoDomestico = 1320
+  } else if ((tipoJogo === "DO") && (etapaJogo === "SF") && (categoria === "2")) {
+    valorIngressoDomestico = 880
+  } else if ((tipoJogo === "DO") && (etapaJogo === "SF") && (categoria === "3")) {
+    valorIngressoDomestico = 550
+  } else if ((tipoJogo === "DO") && (etapaJogo === "SF") && (categoria === "4")) {
+    valorIngressoDomestico = 220
+  } else if ((tipoJogo === "DO") && (etapaJogo === "DT") && (categoria === "1")) {
+    valorIngressoDomestico = 660
+  } else if ((tipoJogo === "DO") && (etapaJogo === "DT") && (categoria === "2")) {
+    valorIngressoDomestico = 440
+  } else if ((tipoJogo === "DO") && (etapaJogo === "DT") && (categoria === "3")) {
+    valorIngressoDomestico = 330
+  } else if ((tipoJogo === "DO") && (etapaJogo === "DT") && (categoria === "4")) {
+    valorIngressoDomestico = 170
+  } else if ((tipoJogo === "DO") && (etapaJogo === "FI") && (categoria === "1")) {
+    valorIngressoDomestico = 1980
+  } else if ((tipoJogo === "DO") && (etapaJogo === "FI") && (categoria === "2")) {
+    valorIngressoDomestico = 1320
+  } else if ((tipoJogo === "DO") && (etapaJogo === "FI") && (categoria === "3")) {
+    valorIngressoDomestico = 880
+  } else if ((tipoJogo === "DO") && (etapaJogo === "FI") && (categoria === "4")) {
+    valorIngressoDomestico = 330
+  }
+
+  let valorTotalIngressoDomestico = valorIngressoDomestico * quantidadeIngresso
+
+  console.log("---Dados da compra---")
+  console.log(`Nome do cliente: ${nomeCompleto}`)
+  console.log(`Tipo do jogo: ${tipoJogo}`)
+  console.log(`Etapa do jogo:  ${etapaJogo}`)
+  console.log(`Categoria: ${categoria}`)
+  console.log(`Quantidade de Ingressos: ${quantidadeIngresso} ingressos`)
+  console.log(` ---Valores--- `)
+  console.log(`Valor do ingresso: R$${valorIngressoDomestico}`)
+  console.log(`Valor total: R$${valorTotalIngressoDomestico}`)
+}
+
+function templateTotalInternacional() {
+
+  let valorIngressoDolar
+  const dolar = 4.10
+
+  if ((tipoJogo === "IN") && (etapaJogo === "SF") && (categoria === "1")) {
+
+  } else if ((tipoJogo === "IN") && (etapaJogo === "SF") && (categoria === "2")) {
+    valorIngressoDolar = 880 * dolar
+  } else if ((tipoJogo === "IN") && (etapaJogo === "SF") && (categoria === "3")) {
+    valorIngressoDolar = 550 * dolar
+  } else if ((tipoJogo === "IN") && (etapaJogo === "SF") && (categoria === "4")) {
+    valorIngressoDolar = 220 * dolar
+  } else if ((tipoJogo === "IN") && (etapaJogo === "DT") && (categoria === "1")) {
+    valorIngressoDolar = 660 * dolar
+  } else if ((tipoJogo === "IN") && (etapaJogo === "DT") && (categoria === "2")) {
+    valorIngressoDolar = 440 * dolar
+  } else if ((tipoJogo === "IN") && (etapaJogo === "DT") && (categoria === "3")) {
+    valorIngressoDolar = 330 * dolar
+  } else if ((tipoJogo === "IN") && (etapaJogo === "DT") && (categoria === "4")) {
+    valorIngressoDolar = 170 * dolar
+  } else if ((tipoJogo === "IN") && (etapaJogo === "FI") && (categoria === "1")) {
+    valorIngressoDolar = 1980 * dolar
+  } else if ((tipoJogo === "IN") && (etapaJogo === "FI") && (categoria === "2")) {
+    valorIngressoDolar = 1320 * dolar
+  } else if ((tipoJogo === "IN") && (etapaJogo === "FI") && (categoria === "3")) {
+    valorIngressoDolar = 880 * dolar
+  } else if ((tipoJogo === "IN") && (etapaJogo === "FI") && (categoria === "4")) {
+    valorIngressoDolar = 330 * dolar
+  }
+
+  const valorTotalIngressoInternacional = valorIngressoDolar * quantidadeIngresso
+
+  console.log("---Dados da compra---")
+  console.log(`Nome do cliente: ${nomeCompleto}`)
+  console.log(`Tipo do jogo: ${tipoJogo}`)
+  console.log(`Etapa do jogo:  ${etapaJogo}`)
+  console.log(`Categoria: ${categoria}`)
+  console.log(`Quantidade de Ingressos: ${quantidadeIngresso} ingressos`)
+  console.log(` ---Valores--- `)
+  console.log(`Valor do ingresso: U$${valorIngressoDolar}`)
+  console.log(`Valor total: U$${valorTotalIngressoInternacional}`)
+}
+
+if (tipoJogo === "DO") {
+  templateTotalDomestico()
+} else if (tipoJogo === "IN") {
+  templateTotalInternacional()
+}
