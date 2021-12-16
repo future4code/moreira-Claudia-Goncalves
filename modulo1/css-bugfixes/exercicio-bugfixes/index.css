@@ -98,6 +98,7 @@ div:last-child {
 
 table {
     width: 60%;
+    margin: 0 auto;
     
 }
 
@@ -107,6 +108,7 @@ table {
     height: 30px;
     border-radius: 5px;
     color: black;
+
 }
 
 .botao-comprar:hover{
@@ -141,6 +143,7 @@ table tr td img{
     border-radius: 5px;
     font-size: 10px;
     color: black;
+
 }
 
 #back-button:hover {
