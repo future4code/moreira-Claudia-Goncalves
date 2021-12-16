@@ -74,9 +74,6 @@ div img {
     padding-top:30px
 }
 
-/* #container-de-descricao p{
-    background-color: pink;
-} */
 
 #container-de-descricao>ol {
     padding: 15px 0px;
@@ -106,6 +103,7 @@ div:last-child {
 
 table {
     width: 60%;
+    
 }
 
 td button {
@@ -114,6 +112,10 @@ td button {
     height: 30px;
     border-radius: 5px;
     color: black;
+}
+
+table tr{
+    text-align: center;
 }
 
 .container-do-search {
