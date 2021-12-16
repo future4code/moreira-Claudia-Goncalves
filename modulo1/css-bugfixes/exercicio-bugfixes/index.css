@@ -118,6 +118,12 @@ table tr{
     text-align: center;
 }
 
+table tr td img{
+    background-color:transparent;
+    height: 70px;
+    width: 60px;
+}
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
