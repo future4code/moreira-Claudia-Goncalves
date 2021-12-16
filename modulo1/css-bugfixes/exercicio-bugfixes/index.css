@@ -25,6 +25,8 @@ button:focus {
     color: white;
 }
 
+
+
 img {
     width: 100px;
 }
@@ -107,12 +109,17 @@ table {
     
 }
 
-td button {
+.botao-comprar {
     background-color: #fadf63;
     width: 150px;
     height: 30px;
     border-radius: 5px;
     color: black;
+}
+
+.botao-comprar:hover{
+    color: white;
+    background-color: #b89704;
 }
 
 table tr{
