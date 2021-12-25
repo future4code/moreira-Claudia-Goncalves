@@ -1,0 +1,28 @@
+.contato {
+  max-width: 500px;
+  height: 483px;
+  margin: 0 auto;
+}
+
+.contato h1 {
+  text-align: center;
+  margin: 50px 0 20px 0;
+}
+.contato input,
+textarea {
+  width: 470px;
+  padding: 15px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit {
+  background: #877696;
+  font-weight: bold;
+}
+
+.submit:hover {
+  background: #a091ad;
+  font-weight: bold;
+}

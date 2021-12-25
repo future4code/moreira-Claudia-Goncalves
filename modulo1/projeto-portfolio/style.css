@@ -1,0 +1,51 @@
+.foto {
+  width: 180px;
+  height: 190px;
+  border-radius: 50%;
+  margin: 50px auto 50px 110px;
+}
+
+.lista-competencias {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.lista-competencias ul {
+  padding-bottom: 30px;
+  font-weight: bold;
+}
+
+.lista-competencias img {
+  width: 20px;
+  height: 20px;
+}
+
+.container-lateral {
+  width: 400px;
+  margin: auto auto;
+  background: #877696;
+}
+
+.container-lateral h3 {
+  text-align: center;
+}
+
+.container-principal {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.container-principal h1 {
+  margin: 50px 0 20px 0;
+  text-align: center;
+}
+
+.container-principal h2 {
+  margin: 40px 0 10px 0;
+  text-align: center;
+}
+
+.container-principal p {
+  padding: 0 20px 0 20px;
+  text-align: left;
+}
