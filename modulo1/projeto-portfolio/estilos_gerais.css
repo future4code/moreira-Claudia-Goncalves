@@ -1,0 +1,50 @@
+/* Estilos gerais */
+.container {
+  display: flex;
+  max-width: 100%;
+  background: #e1d5ed;
+}
+
+/* header menu */
+.container-menu {
+  width: 100%;
+  height: 80px;
+  background-color: #624f72;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.item-menu {
+  display: flex;
+}
+
+.btn-menu {
+  margin: 0 10px;
+  background-color: #f4e3fb;
+
+  transition: 0.3s;
+  border: 2px solid #514160;
+  border-radius: 25px;
+  font-size: 24px;
+  width: 180px;
+  height: 40px;
+}
+.btn-menu:hover {
+  font-size: 28px;
+}
+
+/* footer  */
+
+.footer {
+  background-color: #514160;
+}
+
+.itens-footer {
+  display: flex;
+  justify-content: center;
+}
+.itens-footer a {
+  padding: 10px 10px;
+}
+/* Estilos gerais */
