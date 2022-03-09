@@ -137,6 +137,10 @@ console.log(nomeItens)
 
 
 // b) Crie um novo array que contenha um objeto com o nome e o preço de cada item, aplicando 5% de desconto em todos eles
+const produtoComDesconto = produtos.map((item) => {
+  return ({ nome: item.nome, preco: (item.preco * 0.95).toFixed(2) })
+})
+console.log(produtoComDesconto)
 
 
 // c) Crie um novo array que contenha apenas os objetos da categoria Bebidas
@@ -146,8 +150,34 @@ const filtroBebidas = produtos.filter((item) => {
 console.log(filtroBebidas)
 
 //d) Crie um novo array que contenha apenas os objetos cujo nome contenha a palavra "Ypê"
-
+const produtosYpe = produtos.filter((item) => {
+  return item.nome.includes("Ypê");
+});
+console.log(produtosYpe)
 
 //e) Crie um novo array onde cada item é uma frase "Compre [NOME] por [PREÇO]". Esse array deve conter frases apenas dos itens cujo nome contenha a palavra "Ypê"
+const compreProdutoYpe = produtosYpe.map((item) => {
+  return `Compre ${item.nome} por R$${(item.preco).toFixed(2)}`
+})
+console.log(compreProdutoYpe)
 
+// ----------------------------------------------------------------------------
 
+//DESAFIOS
+
+const pokemons = [
+  { nome: "Bulbasaur", tipo: "grama" },
+  { nome: "Bellsprout", tipo: "grama" },
+  { nome: "Charmander", tipo: "fogo" },
+  { nome: "Vulpix", tipo: "fogo" },
+  { nome: "Squirtle", tipo: "água" },
+  { nome: "Psyduck", tipo: "água" },
+]
+
+// a) Crie um novo array que contenha apenas o nome dos pokémons em ordem alfabética
+const pokemonsEmOrdemAlfabetica = pokemons.map((item) => {
+  return item.nome
+})
+console.log(pokemonsEmOrdemAlfabetica.sort())
+
+// b) Crie um novo array apenas com os tipos dos pokémons, sem repetição
