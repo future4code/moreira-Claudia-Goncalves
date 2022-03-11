@@ -8,7 +8,7 @@ const DivCompartilhar = styled.div`
   padding:20px;
 
   button{
-    margin: 10px auto;
+    margin: 15px auto;
     width: 50%;
   }
 `
