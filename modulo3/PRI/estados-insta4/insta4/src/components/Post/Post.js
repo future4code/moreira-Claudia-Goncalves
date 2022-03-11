@@ -2,11 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { IconeComContador } from '../IconeComContador/IconeComContador'
+import { SecaoComentario } from '../SecaoComentario/SecaoComentario'
+import { TelaCompartilhamento } from '../TelaCompartilhamento/TelaCompartilhamento'
 
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
-import { SecaoComentario } from '../SecaoComentario/SecaoComentario'
+import iconeSaveBranco from '../../img/noSavePost.png'
+import iconeSavePreto from '../../img/savePost.png'
+import iconeCompartilhar from '../../img/compartilhar.png'
+
+
 
 const PostContainer = styled.div`
   border: 1px solid gray;
@@ -45,18 +51,47 @@ class Post extends React.Component {
     curtido: false,
     numeroCurtidas: 0,
     comentando: false,
-    numeroComentarios: 0
+    numeroComentarios: 0,
+    postSalvo: false,
+    telaCompartilhar: false,
   }
 
   onClickCurtida = () => {
+    const likeSim = this.state.numeroCurtidas + 1
+    const deslike = this.state.numeroCurtidas - 1
+
+    if (!this.state.curtido) {
+      return (
+        this.setState({
+          curtido: !this.state.curtido,
+          numeroCurtidas: likeSim
+        })
+      )
+    } else {
+      return (
+        this.setState({
+          curtido: !this.state.curtido,
+          numeroCurtidas: deslike
+        })
+      )
+    }
+  }
+
+  onClickSalvar = () => {
     this.setState({
-      curtido: !this.state.curtido,
-    });
+      postSalvo: !this.state.postSalvo
+    })
   }
 
   onClickComentario = () => {
     this.setState({
       comentando: !this.state.comentando
+    })
+  }
+
+  onClickCompatilharPost = () => {
+    this.setState({
+      telaCompartilhar: !this.state.telaCompartilhar,
     })
   }
 
@@ -69,43 +104,70 @@ class Post extends React.Component {
 
   render() {
     let iconeCurtida
-
     if (this.state.curtido) {
       iconeCurtida = iconeCoracaoPreto
     } else {
       iconeCurtida = iconeCoracaoBranco
     }
 
-    let componenteComentario
+    let iconeSalvarPost
+    if (this.state.postSalvo) {
+      iconeSalvarPost = iconeSaveBranco
+    } else {
+      iconeSalvarPost = iconeSavePreto
+    }
 
+    let componenteCompartilhar
+    if (this.state.telaCompartilhar) {
+      componenteCompartilhar = <TelaCompartilhamento />
+    }
+
+    let componenteComentario
     if (this.state.comentando) {
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario} />
     }
 
-    return <PostContainer>
-      <PostHeader>
-        <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'} />
-        <p>{this.props.nomeUsuario}</p>
-      </PostHeader>
+    return (
+      <>
+        <PostContainer>
+          <PostHeader>
+            <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'} />
+            <p>{this.props.nomeUsuario}</p>
+          </PostHeader>
 
-      <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'} />
+          <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'} />
 
-      <PostFooter>
-        <IconeComContador
-          icone={iconeCurtida}
-          onClickIcone={this.onClickCurtida}
-          valorContador={this.state.numeroCurtidas}
-        />
+          <PostFooter>
+            <IconeComContador
+              icone={iconeCurtida}
+              onClickIcone={this.onClickCurtida}
+              valorContador={this.state.numeroCurtidas}
+            />
+
+            <IconeComContador
+              icone={iconeSalvarPost}
+              onClickIcone={this.onClickSalvar}
+            />
+
+            <IconeComContador
+              icone={iconeCompartilhar}
+              onClickIcone={this.onClickCompatilharPost}
+            />
+
+            <IconeComContador
+              icone={iconeComentario}
+              onClickIcone={this.onClickComentario}
+              valorContador={this.state.numeroComentarios}
+            />
+          </PostFooter>
+          {componenteComentario}
+          {componenteCompartilhar}
+        </PostContainer>
+      </>
+    )
 
 
-        <IconeComContador
-          icone={iconeComentario}
-          onClickIcone={this.onClickComentario}
-          valorContador={this.state.numeroComentarios}
-        />
-      </PostFooter>
-      {componenteComentario}
-    </PostContainer>
+
   }
 }
 
