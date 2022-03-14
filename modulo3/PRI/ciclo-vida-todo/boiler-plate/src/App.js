@@ -72,6 +72,17 @@ class App extends React.Component {
     })
   }
 
+  apagarTarefa = (id) => {
+    const novaListaDeTarefas = this.state.tarefas.filter((item) => {
+      if (id === item.id) {
+        return false
+      } else {
+        return true
+      }
+    })
+    this.setState({ tarefas: novaListaDeTarefas })
+  }
+
   onChangeFilter = (event) => {
     this.setState({ filtro: event.target.value })
   }
@@ -111,14 +122,13 @@ class App extends React.Component {
             return (
               <Tarefa
                 completa={tarefa.completa}
-                onClick={() => this.selectTarefa(tarefa.id)}
-              >
+                onClick={() => this.selectTarefa(tarefa.id)}>
                 {tarefa.texto}
               </Tarefa>
             )
           })}
         </TarefaList>
-      </div>
+      </div >
     )
   }
 }
