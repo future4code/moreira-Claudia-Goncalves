@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import CadastroUsuario from './components/CadastroUsuario'
+import ListaUsuarios from './components/ListaUsuarios'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+
+  state = {
+    paginaAtual: "listaUsuarios"
+  }
+
+  trocaDePagina = () => {
+    if (this.state.paginaAtual === "cadastrar") {
+      this.setState({ paginaAtual: "listaUsuarios" })
+    } else {
+      this.setState({ paginaAtual: "cadastrar" })
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.trocaDePagina}>Trocar de Página</button>
+        {this.state.paginaAtual === "cadastrar" ? <CadastroUsuario /> : <ListaUsuarios />}
+      </div>
+    );
+  }
 }
 
 export default App;
