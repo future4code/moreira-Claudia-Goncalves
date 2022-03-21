@@ -1,25 +1,7 @@
 import { useState, useEffect } from "react"
 import React from 'react'
-import styled from 'styled-components'
 import axios from 'axios'
-
-const Container = styled.div`
-  display: flex;
-  width: 50%;
-  height: 70%;
-  flex-direction: column;
-  margin: 0 auto;
-  align-items: center;
-
-  img{  
-    height: 300px;
-  }
-`
-const ContainerButton = styled.div`
-    display: flex;
-    width: 500px;
-    justify-content: center;
-`
+import { Container, ContainerButton } from './styled'
 
 const TelaInicial = () => {
 
@@ -27,9 +9,7 @@ const TelaInicial = () => {
   const [bioMatch, setBioMatch] = useState('')
   const [fotoMatch, setFotoMatch] = useState('')
   const [idadeMatch, setIdadeMatch] = useState('')
-  const [escolhendoMatch, setEscolhendoMatch] = useState(undefined)
   const [id, setId] = useState('')
-
 
   const perfilMatch = () => {
     axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/claudia/person"
@@ -46,20 +26,17 @@ const TelaInicial = () => {
     perfilMatch();
   }, []);
 
-
   const selecionarMatch = (escolha) => {
     const body = {
       id: id,
       choice: escolha
     }
-    // setEscolhendoMatch(undefined)
+
     axios.post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/claudia/choose-person", body)
       .then((res) => {
-        console.log(res)
         perfilMatch()
       })
   }
-
 
   const naoDeuMatch = () => {
     selecionarMatch(false);
@@ -67,24 +44,19 @@ const TelaInicial = () => {
 
   const deuMatch = () => {
     selecionarMatch(true);
-
   };
-
 
   return (
     <Container>
       <img src={fotoMatch} alt={nomeMatch} />
-      <p>{nomeMatch}, {idadeMatch}</p>
+      <b>{nomeMatch}, {idadeMatch}</b>
       <p>{bioMatch}</p>
 
-
       <ContainerButton>
-        <button onClick={naoDeuMatch} > [x] </button>
-
-        <button onClick={deuMatch} >♥</button>
+        <button onClick={naoDeuMatch}> ❌ </button>
+        <button onClick={deuMatch}> ❤️ </button>
       </ContainerButton>
     </Container>
   )
 }
-
 export default TelaInicial

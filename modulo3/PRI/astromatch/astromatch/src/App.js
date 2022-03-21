@@ -1,22 +1,19 @@
-import { useState, useEffect } from "react"
 import React from 'react'
+import SelecionarPagina from './components/SelecionarPagina/SelecionarPagina'
 import styled from 'styled-components'
-import axios from 'axios'
 
-import TelaInicial from './pages/TelaInicial'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import SelecionarPagina from './components/SelecionarPagina'
+const ContainerTotal = styled.div`
+background-image: linear-gradient(to right, #D8437B , #F27841);
+height: 100%;
+width: 100%;
+padding-bottom:100px;
+`
 
 function App() {
-
   return (
-    <div>
+    <ContainerTotal>
       <SelecionarPagina />
-
-      <Footer />
-    </div>
-
+    </ContainerTotal>
   );
 }
 
