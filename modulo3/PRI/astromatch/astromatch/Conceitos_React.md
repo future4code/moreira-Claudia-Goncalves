@@ -131,9 +131,10 @@ ____
 
 ✅ **Layout estático da tela de perfil**
 
-![telaInicial.drawio](C:\Users\Claudia\Downloads\telaInicial.drawio.png)
 
 
+
+![telaInicial drawio](https://user-images.githubusercontent.com/60494846/159226123-8d11040a-5254-485a-bd5d-6100ec85b18e.png)
 
 
 
@@ -141,4 +142,4 @@ ____
 
 ✅ **Layout estático da tela de matchs**
 
-![telaInicial.drawio (1)](C:\Users\Claudia\Downloads\telaInicial.drawio (1).png)
+![telaInicial drawio (1)](https://user-images.githubusercontent.com/60494846/159226143-a0f73311-b07f-42a4-bf60-816e7d80e51c.png)
