@@ -17,5 +17,8 @@
     "exercicio9": "tsc && node ./build/exercicio9.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.23"
+  }
 }
