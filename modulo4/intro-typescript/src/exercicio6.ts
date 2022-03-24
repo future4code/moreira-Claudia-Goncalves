@@ -4,7 +4,7 @@
 // c) A multiplicação desses números
 // d) Qual deles é o maior
 
-const operacoes = (num1: number, num2: number): any => {
+const operacoes = (num1: number, num2: number): void => {
   const soma: number = num1 + num2;
   console.log(`A soma de ${num1} + ${num2} = ${soma} `)
 
