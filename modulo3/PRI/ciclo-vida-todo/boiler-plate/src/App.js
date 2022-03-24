@@ -37,9 +37,9 @@ class App extends React.Component {
     })
   };
 
+
   onChangeInput = (event) => {
     this.setState({ inputValue: event.target.value })
-
   }
 
   criaTarefa = () => {
@@ -52,6 +52,7 @@ class App extends React.Component {
       copiaNovaTarefa = [...this.state.tarefas, novaTarefa]
     this.setState({ tarefas: copiaNovaTarefa })
   }
+
 
   selectTarefa = (id) => {
     // alterar tarefas como completas ou incompletas
@@ -72,12 +73,13 @@ class App extends React.Component {
     })
   }
 
+
   onChangeFilter = (event) => {
     this.setState({ filtro: event.target.value })
   }
 
   render() {
-    const listaFiltrada = this.state.tarefas.filter((tarefa) => {
+    const listaFiltrada = this.state.tarefas.filter(tarefa => {
       switch (this.state.filtro) {
         case 'pendentes':
           return !tarefa.completa
@@ -99,14 +101,13 @@ class App extends React.Component {
 
         <InputsContainer>
           <label>Filtro</label>
-          <select value={this.state.filter} onChange={this.onChangeFilter}>
+          <select value={this.state.filtro} onChange={this.onChangeFilter}>
             <option value="">Nenhum</option>
             <option value="pendentes">Pendentes</option>
             <option value="completas">Completas</option>
           </select>
         </InputsContainer>
         <TarefaList>
-          <h4>Tarefas</h4>
           {listaFiltrada.map(tarefa => {
             return (
               <Tarefa
