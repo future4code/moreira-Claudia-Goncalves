@@ -1,15 +1,20 @@
 const usuarios = (arrayRecebido: any[]) => {
   const arrayEditado = arrayRecebido.filter((item) => {
-    return (item.role === "admin")
+    return (item.role) === "admin"
   }).map((item) => {
     return (item.email)
   })
-
   console.log(arrayEditado)
 }
 
+type pessoas = {
+  name: string,
+  email: string,
+  role: string
+}
 
-const funcionariosCadastrados: any = [
+
+const funcionariosCadastrados = [
   { name: "Rogério", email: "roger@email.com", role: "user" },
   { name: "Ademir", email: "ademir@email.com", role: "admin" },
   { name: "Aline", email: "aline@email.com", role: "user" },
@@ -17,6 +22,4 @@ const funcionariosCadastrados: any = [
   { name: "Adilson", email: "adilson@email.com", role: "user" },
   { name: "Carina", email: "carina@email.com", role: "admin" }
 ]
-
-
 usuarios(funcionariosCadastrados)
