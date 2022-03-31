@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
 
@@ -7,7 +7,11 @@ app.use(express.json());
 app.use(cors());
 
 
-app.get("/ping", (req, res) => {
+app.get("/ping", (req: Request, res: Response) => {
+  res.send("Pong! 🏓")
+})
+
+app.get("/todos", (req: Request, res: Response) => {
   res.send("Pong! 🏓")
 })
 
