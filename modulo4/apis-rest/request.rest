@@ -1,0 +1,28 @@
+
+
+GET http://localhost:3003/users?type=ADMIN
+content-type: application/json; 
+Authorization: ""
+
+###
+
+
+GET http://localhost:3003/users/name?name=GabrielzinhoDaSilva
+content-type: application/json; 
+Authorization: ""
+
+###
+
+
+POST http://localhost:3003/users
+content-type: application/json
+Authorization: ""
+
+{
+    "id": 10,
+    "name": "GabrielzinhoDaSilva",
+    "email": "gabriel@email.com",
+    "type": "NORMAL",
+    "age": 2
+  }
+###
