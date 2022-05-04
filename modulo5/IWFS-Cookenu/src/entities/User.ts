@@ -20,6 +20,6 @@ export class User {
   getName = (): string => this.name;
   getEmail = (): string => this.email;
   getPassword = (): string => this.password;
-  getRole = (): string => this.role;
+  getRole = (): USER_ROLES => this.role;
 
 }
