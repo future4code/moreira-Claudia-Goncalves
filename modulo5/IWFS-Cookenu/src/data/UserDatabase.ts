@@ -28,4 +28,29 @@ export class UserDatabase extends BaseDatabase {
       throw new Error(error.sqlMessage || error.message)
     }
   }
+
+  public async getUser(): Promise<User[]> {
+    try {
+      const user = await BaseDatabase.connection('Users')
+        .select("id", "name", "email")
+      return user.map((user => User.toUserModel(user)))
+
+    } catch (error: any) {
+      throw new Error(error.sqlMessage || error.message)
+    }
+  }
+
+  public async getUserById(id: string): Promise<User[]> {
+    try {
+      const userById = await BaseDatabase.connection('Users')
+        .select("id", "name", "email")
+        .where({ id })
+      return userById
+
+
+    } catch (error: any) {
+      throw new Error(error.sqlMessage || error.message)
+    }
+
+  }
 }
