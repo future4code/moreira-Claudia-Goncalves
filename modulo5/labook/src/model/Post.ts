@@ -12,11 +12,4 @@ export default class Post {
     private created_at: Date,
     private authorId: string
   ) { }
-
-  getIdPost = (): string => this.id;
-  getPhoto = (): string => this.photo;
-  getDescription = (): string => this.description;
-  getType = (): POST_TYPES => this.type;
-  getCreated_at = (): Date => this.created_at;
-  getAuthorId = (): string => this.authorId;
 }
