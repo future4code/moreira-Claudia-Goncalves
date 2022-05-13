@@ -1,4 +1,4 @@
-enum POST_TYPES {
+export enum POST_TYPES {
   NORMAL = "NORMAL",
   EVENT = "EVENT"
 }
@@ -10,6 +10,6 @@ export default class Post {
     private description: string,
     private type: POST_TYPES,
     private created_at: Date,
-    private authorId: string
+    private author_Id: string
   ) { }
 }
