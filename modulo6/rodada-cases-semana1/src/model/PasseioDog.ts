@@ -1,8 +1,7 @@
 export enum STATUS {
   CONCLUIDO = "CONCLUIDO",
   EM_ANDAMENTO = "EM ANDAMENTO",
-  A_REALIZAR = "A_REALIZAR",
-  default = CONCLUIDO
+  A_REALIZAR = "A REALIZAR"
 }
 
 export enum DURACAO {

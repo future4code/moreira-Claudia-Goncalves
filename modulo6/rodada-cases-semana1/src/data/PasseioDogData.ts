@@ -7,7 +7,7 @@ export class PasseioDogData extends BaseDatabase {
 
     try {
       await this.connection(this.TABLE_NAME).insert({
-        status_caminhada: dadosPasseio.getStatus_passeio(),
+        status_passeio: dadosPasseio.getStatus_passeio(),
         data_agendamento: dadosPasseio.getData_agendamento(),
         preco: dadosPasseio.getPreco(),
         duracao: dadosPasseio.getDuracao(),
@@ -16,7 +16,7 @@ export class PasseioDogData extends BaseDatabase {
         nome_pet: dadosPasseio.getNome_pet(),
         quantidade_pet: dadosPasseio.getQuantidade_pet(),
         hora_inicio: dadosPasseio.getHora_inicio(),
-        hora_fim: dadosPasseio.getHora_fim(),
+        hora_fim: dadosPasseio.getHora_fim()
 
       });
 
@@ -29,4 +29,55 @@ export class PasseioDogData extends BaseDatabase {
     }
   }
 
+  getTodosPasseios = async () => {
+    try {
+      const todosPasseios = await this.connection.raw(`
+      SELECT * FROM DogWalking;
+      `)
+      return todosPasseios[0]
+
+    } catch (error) {
+      if (error instanceof Error) {
+        throw new Error(error.message);
+      } else {
+        throw new Error("Erro no banco de dados.");
+      }
+    }
+  }
+
+  getPasseiosPorPeriodo = async () => {
+    try {
+      const todosPasseios = await this.connection.raw(`
+      SELECT MAX(data_agendamento) as 'Data dos próximos passeios'
+      FROM DogWalking 
+      WHERE data_agendamento < '2099-01-01' AND data_agendamento > NOW() 
+      GROUP BY data_agendamento;
+    `)
+      return todosPasseios[0]
+
+    } catch (error) {
+      if (error instanceof Error) {
+        throw new Error(error.message);
+      } else {
+        throw new Error("Erro no banco de dados.");
+      }
+    }
+  }
+
+  getDuracaoPasseio = async () => {
+    try {
+      const duracaoPasseio = await this.connection.raw(`
+      SELECT *, TIMEDIFF(hora_fim, hora_inicio) as "Duração Passeio"
+      FROM DogWalking ;
+    `)
+      return duracaoPasseio[0]
+
+    } catch (error) {
+      if (error instanceof Error) {
+        throw new Error(error.message);
+      } else {
+        throw new Error("Erro no banco de dados.");
+      }
+    }
+  }
 }

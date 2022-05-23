@@ -2,7 +2,7 @@ import { DURACAO, STATUS } from "./PasseioDog";
 
 
 export interface CriarPasseioDogInputDTO {
-  status_caminhada: STATUS,
+  status_passeio: STATUS,
   data_agendamento: string,
   preco: number,
   duracao: DURACAO,
